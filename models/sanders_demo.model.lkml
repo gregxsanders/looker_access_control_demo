@@ -16,12 +16,13 @@ explore: order_items {
     field: products.brand
     user_attribute: brand
   }
-  sql_always_where: ${status} = 'Returned' ;;
-  always_filter: {
-    filters: [products.category: "Accessories"]
-  }
+  # sql_always_where: ${status} = 'Returned' ;;
+  #
+  # always_filter: {
+  #   filters: [products.category: "Accessories"]
+  # }
   join: users {
-    type: left_outer
+    #type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;
     relationship: many_to_one
   }
@@ -31,7 +32,7 @@ explore: order_items {
     sql_on: ${order_items.inventory_item_id} = ${inventory_items.id} ;;
   }
   join: products {
-    type: left_outer
+    #type: left_outer
     relationship: many_to_one
     sql_on: ${products.id} = ${inventory_items.product_id} ;;
   }
