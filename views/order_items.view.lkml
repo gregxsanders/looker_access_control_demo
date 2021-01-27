@@ -96,6 +96,7 @@ view: order_items {
   }
 
   dimension: status {
+
     type: string
     sql: ${TABLE}.status ;;
   }

@@ -16,6 +16,10 @@ explore: order_items {
     field: products.brand
     user_attribute: brand
   }
+  sql_always_where: ${status} = 'Returned' ;;
+  always_filter: {
+    filters: [products.category: "Accessories"]
+  }
   join: users {
     type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;
