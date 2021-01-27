@@ -1,5 +1,5 @@
 view: b_billing_item {
-  sql_table_name: LIVE.B_BillingItem ;;
+  sql_table_name: LIVE."B_BillingItem" ;;
 
   dimension: anzfkpos {
     type: number
@@ -13,7 +13,7 @@ view: b_billing_item {
 
   dimension: batch {
     type: string
-    sql: ${TABLE}.Batch ;;
+    sql: ${TABLE}."Batch" ;;
   }
 
   dimension: billing_document {
