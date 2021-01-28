@@ -15,7 +15,13 @@ access_grant: event {
   allowed_values: ["yes"]
 }
 
+access_grant: sensitive_data {
+  user_attribute: can_see_sensitive_data
+  allowed_values: ["yes"]
+}
+
 explore: events {
+  # Set value of can_see_events UA to yes to access this explore
   required_access_grants: [event]
 }
 

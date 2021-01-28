@@ -40,6 +40,7 @@ view: users {
   }
 
   dimension: email {
+    required_access_grants: [sensitive_data]
     type: string
     sql: ${TABLE}.email ;;
   }
@@ -55,6 +56,7 @@ view: users {
   }
 
   dimension: last_name {
+    required_access_grants: [sensitive_data]
     type: string
     sql: ${TABLE}.last_name ;;
   }
