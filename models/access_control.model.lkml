@@ -10,11 +10,13 @@ datagroup: sanders_demo_default_datagroup {
 
 persist_with: sanders_demo_default_datagroup
 
+# Controls access to the events explore
 access_grant: event {
   user_attribute: can_see_events
   allowed_values: ["yes"]
 }
 
+# This is applied to email and last name in the Users view
 access_grant: sensitive_data {
   user_attribute: can_see_sensitive_data
   allowed_values: ["yes"]
