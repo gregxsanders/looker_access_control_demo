@@ -9,18 +9,27 @@ datagroup: sanders_demo_default_datagroup {
 }
 
 persist_with: sanders_demo_default_datagroup
-# new comment
+
+access_grant: event {
+  user_attribute: can_see_events
+  allowed_values: ["yes"]
+}
+
+explore: events {
+  required_access_grants: [event]
+}
 
 explore: order_items {
+  # Demo: apply value Allegra K,Dockers to a user's brand UA and sudo
   access_filter: {
     field: products.brand
     user_attribute: brand
   }
-  # sql_always_where: ${status} = 'Returned' ;;
-  #
-  # always_filter: {
-  #   filters: [products.category: "Accessories"]
-  # }
+  sql_always_where: ${status} = 'Returned' ;;
+
+  always_filter: {
+    filters: [products.category: "Accessories"]
+  }
   join: users {
     #type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;
