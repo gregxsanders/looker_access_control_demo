@@ -16,6 +16,8 @@ access_grant: event {
   allowed_values: ["yes"]
 }
 
+# test
+
 # This is applied to email and last name in the Users view
 access_grant: sensitive_data {
   user_attribute: can_see_sensitive_data
