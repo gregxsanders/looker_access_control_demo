@@ -34,6 +34,7 @@ explore: order_items {
     user_attribute: brand
   }
   # Comment these out to show effects in OI Explore
+  #add a new comment
   sql_always_where: ${status} = 'Returned' ;;
 
   always_filter: {
